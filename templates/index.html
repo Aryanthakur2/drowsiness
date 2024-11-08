@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drowsiness Detection App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+    <script>
+        function startCamera() {
+            const name = document.getElementById('name').value;
+            const vehicle number = document.getElementById('vehicle number').value;
+            if (name && vehicle number) {
+                document.getElementById('startButton').style.display = 'none';  // Hide the button after click
+                document.getElementById('videoContainer').style.display = 'block';  // Show the video container
+                window.location.href = "/start";  // Redirect to start the camera
+            } else {
+                alert("Please enter both name and vehicle number to proceed.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Drowsiness Detection</h1>
+        <p class="tagline">Prevent Accidents, Drive Safe, and Build a Better Future!</p>
+        
+        <form id="userForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="vehicle number">vehicle number:</label>
+            <input type="text" id="vehicle number" name="vehicle number" required>
+            
+            <button type="button" id="startButton" class="start-button" onclick="startCamera()">Start Camera</button>
+        </form>
+
+        <div id="videoContainer" class="video-container" style="display:none;">
+            <img src="{{ url_for('video_feed') }}" width="640" height="480" alt="Video feed will appear here" class="video-feed">
+        </div>
+    </div>
+</body>
+</html>

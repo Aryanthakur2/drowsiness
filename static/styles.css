@@ -1,0 +1,90 @@
+/* General body and container styling */
+body {
+    background-color: #eeeef7;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Styling for the container */
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 70%;
+    max-width: 800px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+}
+
+/* Title Styling */
+.title {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+    animation: slideIn 1.2s ease-in-out;
+}
+
+/* Button Styling */
+.start-button {
+    background-color: #007bff;
+    color: white;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.start-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Video container styling (hidden by default) */
+.video-container {
+    margin-top: 20px;
+    display: none;
+    animation: fadeInUp 1s forwards;
+}
+
+/* Video feed styling */
+.video-feed {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframe for the fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframe for the slide-in animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
